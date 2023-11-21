@@ -41,4 +41,8 @@ public class AuthService {
     public boolean isAuth() {
         return currentUser.isPresent();
     }
+
+    public void logOut() {
+        currentUser = Optional.empty();
+    }
 }

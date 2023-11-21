@@ -37,5 +37,7 @@ class MainActivity : AppCompatActivity() {
     fun auth(login: String, pass: String) {
         authService.auth(login, pass)
         Toast.makeText(this, "Вы успешло зашли как $login", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, MainPage::class.java)
+        startActivity(intent)
     }
 }

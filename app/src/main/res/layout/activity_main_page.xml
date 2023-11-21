@@ -13,8 +13,26 @@
         android:backgroundTint="#12275B"
         android:text="Мои компании"
         android:textColor="#AAC3DF"
-        tools:layout_editor_absoluteX="123dp"
-        tools:layout_editor_absoluteY="433dp" />
+        app:layout_constraintBottom_toTopOf="@+id/logOutBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button4"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <Button
+        android:id="@+id/logOutBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#12275B"
+        android:text="Выйти"
+        android:textColor="#AAC3DF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button5"
+        app:layout_constraintVertical_bias="0.5" />
 
     <Button
         android:id="@+id/button3"
@@ -23,8 +41,12 @@
         android:backgroundTint="#12275B"
         android:text="Советы"
         android:textColor="#AAC3DF"
-        tools:layout_editor_absoluteX="146dp"
-        tools:layout_editor_absoluteY="290dp" />
+        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
 
     <Button
         android:id="@+id/button4"
@@ -33,6 +55,10 @@
         android:backgroundTint="#12275B"
         android:text="Подписки"
         android:textColor="#AAC3DF"
-        tools:layout_editor_absoluteX="139dp"
-        tools:layout_editor_absoluteY="368dp" />
+        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3"
+        app:layout_constraintVertical_bias="0.5" />
 </androidx.constraintlayout.widget.ConstraintLayout>
