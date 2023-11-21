@@ -6,8 +6,12 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.boolreader.services.AuthService
+import java.security.InvalidParameterException
+import java.util.Objects
 
 class Reg : AppCompatActivity() {
+    private val authService: AuthService = AuthService.getInstance();
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reg)
@@ -19,24 +23,27 @@ class Reg : AppCompatActivity() {
         val buttonLog: Button = findViewById(R.id.button)
 
         buttonReg.setOnClickListener {
-            var text_log = loginLabel.text.toString()
-            var text_pass = passwordLabel.text.toString()
-            var text_pass2 = password2Label.text.toString()
-            if (text_log != "" && text_pass != "") {
-                if (text_pass2 == text_pass) {
-                    Toast.makeText(this, "Аккаунт создан", Toast.LENGTH_SHORT).show();
-                    change(text_log, text_pass)
-                    val intent = Intent(this, MainActivity::class.java)
-                    startActivity(intent)
-                } else
-                    Toast.makeText(this, "Пароли не совпадают", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(this, "Введите логин и пароль", Toast.LENGTH_SHORT).show();
+            var login = loginLabel.text.toString()
+            var pass = passwordLabel.text.toString()
+            var repeatPass = password2Label.text.toString()
+            try {
+                registry(login, pass, repeatPass)
+            } catch (ex: Exception) {
+                Toast.makeText(this, ex.message, Toast.LENGTH_SHORT).show();
             }
         }
         buttonLog.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    private fun registry(login: String, pass: String, repeatPass: String) {
+        if (!Objects.equals(pass, repeatPass)) {
+            throw InvalidParameterException("Пароли не совпадают")
+        }
+        authService.auth(login, pass)
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 }
