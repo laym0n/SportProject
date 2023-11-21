@@ -22,7 +22,7 @@
             android:name=".Advises"
             android:exported="false" />
         <activity
-            android:name=".Company"
+            android:name=".CompanyActivity"
             android:exported="false" />
         <activity
             android:name=".MyCompanies"

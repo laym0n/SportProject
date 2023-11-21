@@ -6,4 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".Companies">
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Мои компании"
+        android:textColor="#819C4A"
+        android:textSize="30sp"
+        app:autoSizeMaxTextSize="12dp"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="47dp" />
+
+    <Button
+        android:id="@+id/createCompanyBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#12275B"
+        android:text="Создать компанию"
+        android:textColor="#AAC3DF"
+        tools:layout_editor_absoluteX="116dp"
+        tools:layout_editor_absoluteY="97dp" />
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="584dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="146dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

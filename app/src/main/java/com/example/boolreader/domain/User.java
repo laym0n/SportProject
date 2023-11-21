@@ -1,6 +1,7 @@
 package com.example.boolreader.domain;
 
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -30,6 +31,22 @@ public class User {
 
     public void setPass(String pass) {
         this.pass = pass;
+    }
+
+    public List<Company> getSubscribes() {
+        return Objects.isNull(subscribes) ? subscribes = new ArrayList<>() : subscribes;
+    }
+
+    public void setSubscribes(List<Company> subscribes) {
+        this.subscribes = subscribes;
+    }
+
+    public List<Company> getOwningCompanies() {
+        return Objects.isNull(owningCompanies) ? owningCompanies = new ArrayList<>() : owningCompanies;
+    }
+
+    public void setOwningCompanies(List<Company> owningCompanies) {
+        this.owningCompanies = owningCompanies;
     }
 
     @Override
