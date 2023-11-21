@@ -1,11 +1,15 @@
 package com.example.boolreader.domain;
 
 
+import java.util.List;
 import java.util.Objects;
 
 public class User {
     private String login;
     private String pass;
+
+    private List<Company> subscribes;
+    private List<Company> owningCompanies;
 
     public User(String login, String pass) {
         this.login = login;
