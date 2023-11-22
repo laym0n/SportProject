@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Companies">
+    tools:context=".MyCompaniesActivity">
 
     <TextView
         android:id="@+id/textView2"
@@ -18,7 +18,7 @@
         tools:layout_editor_absoluteY="47dp" />
 
     <Button
-        android:id="@+id/createCompanyBtn"
+        android:id="@+id/goToCreateCompanyBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#12275B"
@@ -27,15 +27,4 @@
         tools:layout_editor_absoluteX="116dp"
         tools:layout_editor_absoluteY="97dp" />
 
-    <ScrollView
-        android:layout_width="409dp"
-        android:layout_height="584dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="146dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

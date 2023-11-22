@@ -13,7 +13,10 @@
         android:theme="@style/Theme.BoolReader"
         tools:targetApi="31">
         <activity
-            android:name=".Companies"
+            android:name=".CreateCompanyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MyCompaniesActivity"
             android:exported="false" />
         <activity
             android:name=".Advise"
@@ -25,7 +28,7 @@
             android:name=".CompanyActivity"
             android:exported="false" />
         <activity
-            android:name=".MyCompanies"
+            android:name=".CompaniesActivity"
             android:exported="false" />
         <activity
             android:name=".MySubscrription"

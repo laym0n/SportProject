@@ -4,8 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
 import com.example.boolreader.services.AuthService
 
 class MainPage : AppCompatActivity() {
@@ -18,6 +16,12 @@ class MainPage : AppCompatActivity() {
         logOutBtn.setOnClickListener {
             authService.logOut()
             val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        val myCompaniesBtn: Button = findViewById(R.id.MyCompaniesBtn)
+        myCompaniesBtn.setOnClickListener {
+            val intent = Intent(this, MyCompaniesActivity::class.java)
             startActivity(intent)
         }
     }

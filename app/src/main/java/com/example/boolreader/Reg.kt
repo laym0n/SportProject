@@ -19,8 +19,8 @@ class Reg : AppCompatActivity() {
         val loginLabel: EditText = findViewById(R.id.editTextText)
         val passwordLabel: EditText = findViewById(R.id.editTextText2)
         val password2Label: EditText = findViewById(R.id.editTextText3)
-        val buttonReg: Button = findViewById(R.id.button2)
-        val buttonLog: Button = findViewById(R.id.button)
+        val buttonReg: Button = findViewById(R.id.createAccountBtn)
+        val buttonLog: Button = findViewById(R.id.backToLoginPage)
 
         buttonReg.setOnClickListener {
             var login = loginLabel.text.toString()
@@ -42,7 +42,7 @@ class Reg : AppCompatActivity() {
         if (!Objects.equals(pass, repeatPass)) {
             throw InvalidParameterException("Пароли не совпадают")
         }
-        authService.auth(login, pass)
+        authService.register(login, pass)
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
