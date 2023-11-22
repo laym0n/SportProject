@@ -1,11 +1,11 @@
 package com.example.boolreader
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 
-class CompaniesActivity : AppCompatActivity() {
+class AdviseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_my_companies)
+        setContentView(R.layout.activity_advise)
     }
 }

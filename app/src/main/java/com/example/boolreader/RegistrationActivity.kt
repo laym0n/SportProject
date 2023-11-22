@@ -1,20 +1,20 @@
 package com.example.boolreader
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.boolreader.services.AuthService
 import java.security.InvalidParameterException
 import java.util.Objects
 
-class Reg : AppCompatActivity() {
+class RegistrationActivity : AppCompatActivity() {
     private val authService: AuthService = AuthService.getInstance();
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_reg)
+        setContentView(R.layout.activity_registration)
 
         val loginLabel: EditText = findViewById(R.id.editTextText)
         val passwordLabel: EditText = findViewById(R.id.editTextText2)
@@ -33,7 +33,7 @@ class Reg : AppCompatActivity() {
             }
         }
         buttonLog.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, AuthActivity::class.java)
             startActivity(intent)
         }
     }
@@ -43,7 +43,7 @@ class Reg : AppCompatActivity() {
             throw InvalidParameterException("Пароли не совпадают")
         }
         authService.register(login, pass)
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, AuthActivity::class.java)
         startActivity(intent)
     }
 }

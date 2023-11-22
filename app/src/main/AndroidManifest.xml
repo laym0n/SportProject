@@ -19,30 +19,30 @@
             android:name=".MyCompaniesActivity"
             android:exported="false" />
         <activity
-            android:name=".Advise"
+            android:name=".AdviseActivity"
             android:exported="false" />
         <activity
-            android:name=".Advises"
+            android:name=".AdvisesActivity"
             android:exported="false" />
         <activity
             android:name=".CompanyActivity"
             android:exported="false" />
         <activity
-            android:name=".CompaniesActivity"
+            android:name=".SubscribedCompaniesActivity"
             android:exported="false" />
         <activity
-            android:name=".MySubscrription"
+            android:name=".MySubscriptionActivity"
             android:exported="false" />
         <activity
-            android:name=".MainPage"
+            android:name=".MainActivity"
             android:exported="false"
             android:label="@string/title_activity_main_page"
             android:theme="@style/Theme.BoolReader" />
         <activity
-            android:name=".Reg"
+            android:name=".RegistrationActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".AuthActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
