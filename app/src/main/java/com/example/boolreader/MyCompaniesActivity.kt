@@ -15,5 +15,11 @@ class MyCompaniesActivity : AppCompatActivity() {
             val intent = Intent(this, CreateCompanyActivity::class.java)
             startActivity(intent)
         }
+
+        val goToMainPageBtn: Button = findViewById(R.id.goToMainPage)
+        goToMainPageBtn.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
