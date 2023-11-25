@@ -3,6 +3,8 @@ package com.example.boolreader
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
@@ -31,5 +33,12 @@ class MyCompaniesActivity : AppCompatActivity() {
         val myCompaniesListView: ListView = findViewById(R.id.myCompaniesListView)
         val arrayAdapter : ArrayAdapter<Company> = ArrayAdapter<Company>(this, android.R.layout.simple_list_item_1, companyService.owningCompaniesOfCurrentUser)
         myCompaniesListView.adapter = arrayAdapter;
+        myCompaniesListView.setOnItemClickListener { parent, view, position, id ->
+            val myCompaniesListView: ListView = findViewById(R.id.myCompaniesListView)
+            val selectCompany : Company = myCompaniesListView.getItemAtPosition(position) as Company;
+            companyService.selectCompany(selectCompany.id)
+            val intent = Intent(this, CompanyActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
