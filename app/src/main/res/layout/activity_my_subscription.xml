@@ -10,25 +10,33 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:text="Мои подписки"
         android:textColor="#819C4A"
         android:textSize="30sp"
         app:autoSizeMaxTextSize="12dp"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="26dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/goToMainPage2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="604dp"
+        android:layout_marginTop="76dp"
         android:backgroundTint="#12275B"
         android:text="Вернуться на главный экран"
         android:textColor="#AAC3DF"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2"
-        app:layout_constraintVertical_bias="0.553" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/mySubscriptionsListView"
+        android:layout_width="409dp"
+        android:layout_height="605dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
