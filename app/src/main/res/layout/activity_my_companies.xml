@@ -10,41 +10,39 @@
         android:id="@+id/goToMainPage"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:layout_marginBottom="560dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="#12275B"
         android:text="Вернуться на главный экран"
         android:textColor="#AAC3DF"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goToCreateCompanyBtn" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="Мои компании"
         android:textColor="#819C4A"
         android:textSize="30sp"
         app:autoSizeMaxTextSize="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/goToCreateCompanyBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.842" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/goToCreateCompanyBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
         android:backgroundTint="#12275B"
         android:text="Создать компанию"
         android:textColor="#AAC3DF"
-        app:layout_constraintBottom_toTopOf="@+id/goToMainPage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="68dp" />
 
     <ListView
         android:id="@+id/myCompaniesListView"
