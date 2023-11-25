@@ -56,4 +56,9 @@ public class Company {
     public void setCreator(User creator) {
         this.creator = creator;
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }
