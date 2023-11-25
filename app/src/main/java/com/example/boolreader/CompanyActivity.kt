@@ -3,14 +3,19 @@ package com.example.boolreader
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.ListView
 import android.widget.TextView
 import android.widget.Toast
+import com.example.boolreader.domain.Advise
+import com.example.boolreader.services.AdviseService
 import com.example.boolreader.services.AuthService
 import com.example.boolreader.services.CompanyService
 
 class CompanyActivity : AppCompatActivity() {
     private val companyService: CompanyService = CompanyService.getInstance();
+    private val adviseService: AdviseService = AdviseService.getInstance();
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_company)
@@ -49,6 +54,16 @@ class CompanyActivity : AppCompatActivity() {
         val goToCreateAdvisePageBtn: Button = findViewById(R.id.goToCreateAdvisePageBtn)
         goToCreateAdvisePageBtn.setOnClickListener {
             val intent = Intent(this, CreateAdviseActivity::class.java)
+            startActivity(intent)
+        }
+
+        val advisesListView: ListView = findViewById(R.id.advisesListView)
+        val arrayAdapter : ArrayAdapter<Advise> = ArrayAdapter<Advise>(this, android.R.layout.simple_list_item_1, selectedCompany.advises)
+        advisesListView.adapter = arrayAdapter;
+        advisesListView.setOnItemClickListener { parent, view, position, id ->
+            val selectedAdvise : Advise = advisesListView.getItemAtPosition(position) as Advise
+            adviseService.selectAdvise(selectedAdvise.id)
+            val intent = Intent(this, AdviseActivity::class.java)
             startActivity(intent)
         }
     }
