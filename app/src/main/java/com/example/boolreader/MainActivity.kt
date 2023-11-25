@@ -30,5 +30,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, MySubscriptionActivity::class.java)
             startActivity(intent)
         }
+
+        val gotToAllAdvisesPageBtn: Button = findViewById(R.id.gotToAllAdvisesPageBtn)
+        gotToAllAdvisesPageBtn.setOnClickListener {
+            val intent = Intent(this, AdvisesActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

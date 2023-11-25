@@ -57,9 +57,7 @@ public class CompanyService {
     }
 
     public void selectCompany(UUID companyId) {
-        if (!companies.containsKey(companyId)) {
-            throw new InvalidParameterException("Компании с id " + companyId + " не существует");
-        }
+        isExistCompany(companyId);
         selectedCompany = Optional.ofNullable(companies.get(companyId));
     }
 
@@ -73,4 +71,14 @@ public class CompanyService {
         return subscribes.stream().anyMatch(company -> company.getId().equals(companyId));
     }
 
+    public Company getCompany(UUID companyId) {
+        isExistCompany(companyId);
+        return companies.get(companyId);
+    }
+
+    private void isExistCompany(UUID companyId) {
+        if (!companies.containsKey(companyId)) {
+            throw new InvalidParameterException("Компании с id " + companyId + " не существует");
+        }
+    }
 }
