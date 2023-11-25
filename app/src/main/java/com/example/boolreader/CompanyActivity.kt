@@ -45,5 +45,11 @@ class CompanyActivity : AppCompatActivity() {
                 Toast.makeText(this, ex.message, Toast.LENGTH_SHORT).show();
             }
         }
+
+        val goToCreateAdvisePageBtn: Button = findViewById(R.id.goToCreateAdvisePageBtn)
+        goToCreateAdvisePageBtn.setOnClickListener {
+            val intent = Intent(this, CreateAdviseActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

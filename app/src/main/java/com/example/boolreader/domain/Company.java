@@ -1,6 +1,8 @@
 package com.example.boolreader.domain;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 public class Company {
@@ -42,7 +44,7 @@ public class Company {
     }
 
     public List<Advise> getAdvises() {
-        return advises;
+        return Objects.isNull(advises) ? advises = new ArrayList<>() : advises;
     }
 
     public void setAdvises(List<Advise> advises) {

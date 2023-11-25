@@ -25,11 +25,11 @@ class CreateCompanyActivity : AppCompatActivity() {
             var address = companyAddress.text.toString()
             try {
                 companyService.createNewCompany(name, address)
+                val intent = Intent(this, MyCompaniesActivity::class.java)
+                startActivity(intent)
             } catch (ex : Exception) {
-                Toast.makeText(this, ex.message, Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, ex.message, Toast.LENGTH_SHORT).show()
             }
-            val intent = Intent(this, MyCompaniesActivity::class.java)
-            startActivity(intent)
         }
     }
 }
