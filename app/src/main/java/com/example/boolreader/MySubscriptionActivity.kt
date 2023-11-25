@@ -22,8 +22,14 @@ class MySubscriptionActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val myCompaniesListView: ListView = findViewById(R.id.mySubscriptionsListView)
+        val subscribedListView: ListView = findViewById(R.id.mySubscriptionsListView)
         val arrayAdapter : ArrayAdapter<Company> = ArrayAdapter<Company>(this, android.R.layout.simple_list_item_1, companyService.subscribedCompaniesOfCurrentUser)
-        myCompaniesListView.adapter = arrayAdapter;
+        subscribedListView.adapter = arrayAdapter;
+        subscribedListView.setOnItemClickListener { parent, view, position, id ->
+            val selectCompany : Company = subscribedListView.getItemAtPosition(position) as Company;
+            companyService.selectCompany(selectCompany.id)
+            val intent = Intent(this, CompanyActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

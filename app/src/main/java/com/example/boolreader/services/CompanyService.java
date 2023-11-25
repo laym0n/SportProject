@@ -37,9 +37,23 @@ public class CompanyService {
     }
 
     public void subscribeToCompany(UUID companyId) {
-        Company company = companies.get(companyId);
+        if (isCurUserSubscribed(companyId)) {
+            return;
+        }
         User curUser = authService.getCurrentUser();
-        curUser.getSubscribes().add(company);
+        List<Company> subscribes = curUser.getSubscribes();
+        Company company = companies.get(companyId);
+        subscribes.add(company);
+    }
+
+    public void unSubscribeToCompany(UUID companyId) {
+        if (!isCurUserSubscribed(companyId)) {
+            return;
+        }
+        User curUser = authService.getCurrentUser();
+        List<Company> subscribes = curUser.getSubscribes();
+        Company company = companies.get(companyId);
+        subscribes.remove(company);
     }
 
     public void selectCompany(UUID companyId) {
@@ -51,6 +65,12 @@ public class CompanyService {
 
     public Company getSelectedCompany() {
         return selectedCompany.orElseThrow(() -> new InvalidParameterException("Компания не выбрана"));
+    }
+
+    public boolean isCurUserSubscribed(UUID companyId) {
+        User curUser = authService.getCurrentUser();
+        List<Company> subscribes = curUser.getSubscribes();
+        return subscribes.stream().anyMatch(company -> company.getId().equals(companyId));
     }
 
 }
