@@ -6,12 +6,14 @@ import java.security.InvalidParameterException;
 import java.util.HashMap;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.logging.Logger;
 
 public class AuthService {
     private static AuthService instance;
     public static AuthService getInstance() {
         return Objects.isNull(instance) ? instance = new AuthService() : instance;
     }
+    private Logger logger = Logger.getLogger(AuthService.class.getSimpleName());
     private HashMap<String, User> users = new HashMap<>();
     private Optional<User> currentUser;
     private AuthService() {
@@ -19,6 +21,7 @@ public class AuthService {
     }
 
     public void auth(String login, String pass) {
+        logger.info("Авторизация пользователя " + login);
         if (!users.containsKey(login) || !users.get(login).getPass().equals(pass)) {
             throw new InvalidParameterException("Логин или пароль неверный");
         }
@@ -26,6 +29,7 @@ public class AuthService {
     }
 
     public void register(String login, String pass) {
+        logger.info("Регистрация пользователя " + login);
         if ("".equals(login.trim()) || "".equals(pass.trim())) {
             throw new InvalidParameterException("Некорректный пароль или логин");
         }
